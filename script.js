@@ -10,7 +10,7 @@ window.onload = () => {
 
 function arrayLoop() {
   counter.unshift(counter[0] + 1);
-  if (counter.length >= 9) {
+  if (counter.length >= 10) {
     counter.pop();
   }
   console.log(counter);
