@@ -1,23 +1,18 @@
 "use strict";
 
-let i = 1;
+let counter;
 
-const countingArray = [0];
-
-arrayLoop();
+window.onload = () => {
+  counter = [0];
+  console.log(counter);
+  arrayLoop();
+};
 
 function arrayLoop() {
-  console.log(countingArray);
-  if (countingArray.length < 9) {
-    countingArray.unshift(i);
-  } else {
-    countingArray.unshift(i);
-    countingArray.pop(-1);
+  counter.unshift(counter[0] + 1);
+  if (counter.length >= 9) {
+    counter.pop();
   }
-  if (i < Infinity) {
-    setTimeout(function () {
-      i++;
-      arrayLoop();
-    }, 1000);
-  }
+  console.log(counter);
+  setTimeout(arrayLoop, 1000);
 }
